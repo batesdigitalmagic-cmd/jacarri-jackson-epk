@@ -31,6 +31,7 @@
   --bone:   #EFE7DD;   /* the paint swash / paper              */
   --gold:   #C9A14C;   /* the "7"                              */
   --lilac:  #9C86BC;   /* Contagious Vibes                     */
+  --accent-red: #D62828; /* action red for play/listen icons */
 
   --display: "Big Shoulders Display", "Haettenschweiler", sans-serif;
   --body:    "Newsreader", Georgia, serif;
@@ -535,6 +536,20 @@ a{ color: inherit; }
 }
 .paper .btn{ border-color: var(--night); color: var(--night); }
 .paper .btn:hover{ background: var(--night); color: var(--bone); }
+
+@media (max-width: 780px){
+  /* mobile-only: make play overlay and listen links/icons red */
+  .video-card .frame::after{ color: var(--accent-red); }
+  .release .go{ color: var(--accent-red); border-color: var(--accent-red); }
+  .release .go:hover{ background: color-mix(in srgb, var(--accent-red) 12%, transparent); color: var(--accent-red); }
+  .hero-actions .btn.solid[href*="music.apple.com"]::before{
+    content: "♪";
+    margin-right: 0.6rem;
+    color: var(--accent-red);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+}
 
 /* ---------- at a glance ---------- */
 
