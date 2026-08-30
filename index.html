@@ -538,10 +538,9 @@ a{ color: inherit; }
 .paper .btn:hover{ background: var(--night); color: var(--bone); }
 
 @media (max-width: 780px){
-  /* mobile-only: make play overlay and listen links/icons red */
+  /* mobile-only: make action icons red without changing button text */
   .video-card .frame::after{ color: var(--accent-red); }
-  .release .go{ color: var(--accent-red); border-color: var(--accent-red); }
-  .release .go:hover{ background: color-mix(in srgb, var(--accent-red) 12%, transparent); color: var(--accent-red); }
+  .release .go .icon{ color: var(--accent-red); }
   .hero-actions .btn.solid[href*="music.apple.com"]::before{
     content: "♪";
     margin-right: 0.6rem;
@@ -814,7 +813,7 @@ a{ color: inherit; }
         <h3>Contagious Vibes</h3>
         <span class="kind">Album · 10 tracks · Hate My Guts, Only One, Hold Me Close</span>
       </div>
-      <a class="go" href="https://music.apple.com/us/album/contagious-vibes/1501089254" target="_blank" rel="noopener">Listen ↗</a>
+      <a class="go" href="https://music.apple.com/us/album/contagious-vibes/1501089254" target="_blank" rel="noopener">Listen <span class="icon" aria-hidden="true">↗</span></a>
     </div>
 
     <div class="release">
@@ -823,7 +822,7 @@ a{ color: inherit; }
         <h3>The Perfect 7</h3>
         <span class="kind">Album · 8 tracks · 28 min · Miss Cold-Hearted, In the Rain, Work for It</span>
       </div>
-      <a class="go" href="https://music.apple.com/us/album/the-perfect-7/1454002023" target="_blank" rel="noopener">Listen ↗</a>
+      <a class="go" href="https://music.apple.com/us/album/the-perfect-7/1454002023" target="_blank" rel="noopener">Listen <span class="icon" aria-hidden="true">↗</span></a>
     </div>
 
     <div class="release">
@@ -832,7 +831,7 @@ a{ color: inherit; }
         <h3>In the Rain</h3>
         <span class="kind">Single · Debut release</span>
       </div>
-      <a class="go" href="https://music.apple.com/us/album/in-the-rain-single/1446121092" target="_blank" rel="noopener">Listen ↗</a>
+      <a class="go" href="https://music.apple.com/us/album/in-the-rain-single/1446121092" target="_blank" rel="noopener">Listen <span class="icon" aria-hidden="true">↗</span></a>
     </div>
 
     <p class="eyebrow" style="margin-top:4rem">Featured appearances</p>
