@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacarri Jackson — Electronic Press Kit</title>
+<meta name="description" content="Official press kit for Jacarri Jackson, R&amp;B, soul and southern hip-hop artist from Shreveport, Louisiana. Bio, discography, video, press photos and booking.">
+
+<!-- Social preview. Swap the image path once press photos are in /assets. -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jacarri Jackson — Electronic Press Kit">
+<meta property="og:description" content="R&amp;B, soul and southern hip-hop out of Shreveport, Louisiana.">
+<meta property="og:image" content="assets/press-01.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   JACARRI JACKSON — EPK
+   Palette pulled from the artist's own record sleeves:
+   the washed rose + gold of "The Perfect 7", the bone-white
+   dry-brush swash, the lavender of "Contagious Vibes".
+   ============================================================ */
+
+:root{
+  --night:  #1B1214;   /* warm near-black, sleeve shadow      */
+  --plum:   #33202A;   /* raised surface                       */
+  --rose:   #B08A88;   /* dusty rose wash                      */
+  --bone:   #EFE7DD;   /* the paint swash / paper              */
+  --gold:   #C9A14C;   /* the "7"                              */
+  --lilac:  #9C86BC;   /* Contagious Vibes                     */
+
+  --display: "Big Shoulders Display", "Haettenschweiler", sans-serif;
+  --body:    "Newsreader", Georgia, serif;
+  --util:    "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  --gutter: clamp(1.25rem, 5vw, 5.5rem);
+  --measure: 60ch;
+  --rule: 1px solid color-mix(in srgb, var(--bone) 18%, transparent);
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+
+body{
+  margin: 0;
+  background: var(--night);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width: 100%; display: block; }
+a{ color: inherit; }
+
+:focus-visible{
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.wrap{
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- shared type roles ---------- */
+
+.eyebrow{
+  font-family: var(--util);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin: 0 0 1.25rem;
+}
+
+.section-head{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin: 0 0 2rem;
+}
+
+.lede{
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: var(--measure);
+}
+
+.band{ padding-block: clamp(4rem, 10vw, 7.5rem); }
+
+/* ---------- sticky nav ---------- */
+
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--night) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: var(--rule);
+}
+.topbar .wrap{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 60px;
+}
+.mark{
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: auto;
+  white-space: nowrap;
+}
+.mark span{ color: var(--gold); }
+
+.topnav{
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--util);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.topnav a{
+  text-decoration: none;
+  color: color-mix(in srgb, var(--bone) 65%, transparent);
+  padding-block: 0.4rem;
+  transition: color 0.2s;
+}
+.topnav a:hover{ color: var(--bone); }
+
+.book-link{
+  font-family: var(--util);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--night);
+  background: var(--gold);
+  padding: 0.55rem 1.1rem;
+  white-space: nowrap;
+}
+.book-link:hover{ background: var(--bone); }
+
+@media (max-width: 780px){
+  .topnav{ display: none; }
+}
+
+/* ---------- hero ---------- */
+
+.hero{
+  position: relative;
+  padding-block: clamp(3.5rem, 9vw, 6.5rem) clamp(2.5rem, 6vw, 4rem);
+  overflow: hidden;
+}
+.hero::after{ /* soft rose bloom, echoes the sleeve gradient */
+  content: "";
+  position: absolute;
+  inset: auto -20% -55% 25%;
+  height: 90%;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--rose) 30%, transparent), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero .wrap{ position: relative; z-index: 1; }
+
+/* the signature: a dry-brush swash carrying the name,
+   the way the sleeve of "The Perfect 7" carries its title */
+.nameplate{
+  position: relative;
+  display: inline-block;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.75rem, 5vw, 4rem);
+  margin-left: clamp(-0.5rem, -1.5vw, -1.5rem);
+}
+.nameplate svg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 0 0 0);
+}
+.nameplate h1{
+  position: relative;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(3.4rem, 13.5vw, 10rem);
+  line-height: 0.8;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--night);
+}
+.nameplate h1 em{
+  display: block;
+  font-style: normal;
+}
+
+.hero-meta{
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  font-family: var(--util);
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--bone) 78%, transparent);
+}
+.hero-meta b{ color: var(--gold); font-weight: 600; }
+
+.hero-actions{
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.btn{
+  font-family: var(--util);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.9rem 1.6rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover{ background: var(--gold); color: var(--night); }
+.btn.solid{ background: var(--gold); color: var(--night); }
+.btn.solid:hover{ background: var(--bone); border-color: var(--bone); }
+
+/* ---------- bio ---------- */
+
+.two-col{
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  align-items: start;
+}
+@media (max-width: 780px){
+  .two-col{ grid-template-columns: 1fr; }
+}
+.two-col p{ max-width: var(--measure); }
+.two-col p:first-of-type{ margin-top: 0; }
+
+.short-bio{
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+  margin-top: 2.75rem;
+  max-width: var(--measure);
+}
+.short-bio .eyebrow{ margin-bottom: 0.5rem; }
+.short-bio p{ margin: 0; font-size: 1rem; }
+
+/* ---------- tagline band ---------- */
+
+.tagline{
+  position: relative;
+  padding-block: clamp(3rem, 7vw, 5rem);
+  text-align: center;
+  overflow: hidden;
+}
+.tagline .swash-holder{
+  position: relative;
+  display: inline-block;
+  padding: clamp(2rem, 5vw, 3.25rem) clamp(2rem, 6vw, 5rem);
+  max-width: 100%;
+}
+.tagline svg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.tagline p{
+  position: relative;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.65rem, 5.5vw, 3.4rem);
+  line-height: 0.94;
+  text-transform: uppercase;
+  color: var(--night);
+}
+.tagline p span{ color: color-mix(in srgb, var(--night) 55%, var(--rose)); }
+.tagline cite{
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--util);
+  font-size: 0.6875rem;
+  font-style: normal;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+/* ---------- paper sections ---------- */
+
+.paper{
+  background: var(--bone);
+  color: var(--night);
+}
+.paper .eyebrow{ color: color-mix(in srgb, var(--night) 55%, var(--rose)); }
+.paper .section-head{ color: var(--night); }
+
+/* ---------- discography ---------- */
+
+.release{
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0,1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: baseline;
+  padding-block: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--night) 16%, transparent);
+}
+.release:last-of-type{ border-bottom: 1px solid color-mix(in srgb, var(--night) 16%, transparent); }
+
+.release .yr{
+  font-family: var(--util);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: color-mix(in srgb, var(--night) 55%, transparent);
+}
+.release h3{
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.release .kind{
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--util);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--night) 58%, transparent);
+}
+.release .go{
+  font-family: var(--util);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+.release .go:hover{ color: color-mix(in srgb, var(--night) 40%, var(--rose)); }
+
+@media (max-width: 640px){
+  .release{ grid-template-columns: 1fr; gap: 0.5rem; }
+}
+
+/* ---------- features ---------- */
+
+.features{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: color-mix(in srgb, var(--night) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--night) 16%, transparent);
+}
+.features li{
+  background: var(--bone);
+  padding: 1.5rem 1.4rem;
+}
+.features .track{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  display: block;
+}
+.features .who{
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--util);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--night) 58%, transparent);
+}
+
+/* ---------- video ---------- */
+
+.videos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+}
+.video-card{
+  text-decoration: none;
+  display: block;
+}
+.video-card .frame{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--plum);
+  overflow: hidden;
+}
+.video-card .frame img{
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.video-card:hover .frame img{ transform: scale(1.04); }
+.video-card .frame::after{
+  content: "▶";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  color: var(--bone);
+  text-shadow: 0 2px 18px rgba(0,0,0,0.6);
+}
+.video-card h3{
+  margin: 0.9rem 0 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.video-card .kind{
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--util);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--night) 58%, transparent);
+}
+
+/* ---------- press photos ---------- */
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.shot{
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: color-mix(in srgb, var(--night) 8%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--night) 30%, transparent);
+  overflow: hidden;
+}
+.shot img{ width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
+.shot::after{
+  content: attr(data-slot);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--util);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--night) 45%, transparent);
+}
+.shot.wide{ aspect-ratio: 3 / 2; }
+
+.dl-row{
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+.paper .btn{ border-color: var(--night); color: var(--night); }
+.paper .btn:hover{ background: var(--night); color: var(--bone); }
+
+/* ---------- at a glance ---------- */
+
+.glance{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1px;
+  background: color-mix(in srgb, var(--bone) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bone) 16%, transparent);
+}
+.glance div{
+  background: var(--night);
+  padding: 1.6rem 1.4rem;
+}
+.glance dt{
+  font-family: var(--util);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin: 0 0 0.6rem;
+}
+.glance dd{
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.glance dd small{
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: none;
+  color: color-mix(in srgb, var(--bone) 70%, transparent);
+}
+
+/* ---------- platforms ---------- */
+
+.platforms{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1px;
+  background: color-mix(in srgb, var(--bone) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bone) 16%, transparent);
+}
+.platforms a{
+  display: block;
+  background: var(--night);
+  padding: 1.5rem 1.4rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.platforms a:hover{ background: var(--gold); color: var(--night); }
+.platforms .name{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  display: block;
+}
+.platforms .handle{
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--util);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, var(--bone) 62%, transparent);
+  word-break: break-word;
+}
+.platforms a:hover .handle{ color: color-mix(in srgb, var(--night) 70%, transparent); }
+
+/* ---------- booking ---------- */
+
+.booking{
+  background: var(--plum);
+  border-top: 3px solid var(--gold);
+}
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+.contact-grid h3{
+  font-family: var(--util);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin: 0 0 0.7rem;
+}
+.contact-grid a{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  line-height: 1.1;
+  text-decoration: none;
+  color: var(--gold);
+  word-break: break-word;
+}
+.contact-grid a:hover{ color: var(--bone); }
+.contact-grid p{ margin: 0.5rem 0 0; font-size: 0.95rem; color: color-mix(in srgb, var(--bone) 72%, transparent); }
+
+/* ---------- footer ---------- */
+
+.foot{
+  padding-block: 2.5rem;
+  border-top: var(--rule);
+  font-family: var(--util);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--bone) 50%, transparent);
+}
+.foot .wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  justify-content: space-between;
+}
+.foot a{ text-decoration: none; }
+.foot a:hover{ color: var(--gold); }
+
+/* ---------- motion ---------- */
+
+@keyframes paint{ from{ clip-path: inset(0 100% 0 0); } to{ clip-path: inset(0 0 0 0); } }
+@keyframes rise{ from{ opacity: 0; transform: translateY(14px); } to{ opacity: 1; transform: none; } }
+
+.nameplate svg{ animation: paint 900ms cubic-bezier(.2,.8,.3,1) both; }
+.nameplate h1{ animation: rise 700ms ease 500ms both; }
+.hero-meta{ animation: rise 700ms ease 720ms both; }
+.hero-actions{ animation: rise 700ms ease 840ms both; }
+
+.reveal{ opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce){
+  .nameplate svg, .nameplate h1, .hero-meta, .hero-actions{ animation: none; }
+  .reveal{ opacity: 1; transform: none; transition: none; }
+  .video-card .frame img{ transition: none; }
+}
+
+@media print{
+  .topbar, .hero::after{ display: none; }
+  body{ background: #fff; color: #000; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top">Jacarri Jackson <span>·</span> EPK</a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#bio">Bio</a>
+      <a href="#music">Music</a>
+      <a href="#video">Video</a>
+      <a href="#photos">Photos</a>
+      <a href="#glance">At a glance</a>
+    </nav>
+    <a class="book-link" href="#booking">Booking</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Electronic press kit &nbsp;·&nbsp; 2026</p>
+
+    <div class="nameplate">
+      <svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="brush" x="-8%" y="-20%" width="116%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="4" seed="7" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <path filter="url(#brush)" fill="#EFE7DD"
+          d="M14 58 C 190 20, 320 44, 480 30 S 780 16, 950 36 C 1070 50, 1150 26, 1192 56
+             L 1188 246 C 1010 278, 830 250, 650 262 S 300 276, 118 252
+             C 58 244, 26 266, 12 236 Z"/>
+      </svg>
+      <h1><em>Jacarri</em><em>Jackson</em></h1>
+    </div>
+
+    <p class="hero-meta">
+      <span>R&amp;B <b>/</b> Soul <b>/</b> Southern hip-hop</span>
+      <span>Shreveport, Louisiana</span>
+      <span>Independent</span>
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn solid" href="https://music.apple.com/us/artist/jacarri-jackson/1445983125" target="_blank" rel="noopener">Listen on Apple Music</a>
+      <a class="btn" href="#booking">Book Jacarri</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIO ============ -->
+<section class="band" id="bio">
+  <div class="wrap two-col reveal">
+    <div>
+      <p class="eyebrow">Biography</p>
+      <h2 class="section-head">The long<br>way around</h2>
+    </div>
+    <div>
+      <p class="lede">Jacarri Jackson makes R&amp;B that keeps one foot in the church and the other on the block — soul melodies delivered with a rapper's cadence, written by someone who came to music after a full life in something else.</p>
+
+      <p>Born in Shreveport and raised in northwest Louisiana, Jackson spent his first act on a football field. He was a three-year letterman and all-state receiver at Logansport High School before signing to play Division I ball at Louisiana Tech. When the game ended, the writing started.</p>
+
+      <p>His debut single "In the Rain" landed in 2018, followed by the full-length <em>The Perfect 7</em> in 2019 — eight tracks that set the template: warm, unhurried production, honest writing about wanting and being wanted, and a voice that slides between singing and speaking without ever announcing the switch. "Miss Cold-Hearted" and "In the Rain" remain his most-played songs.</p>
+
+      <p><em>Contagious Vibes</em> followed in 2020, a longer and looser record that widened the range — "Hate My Guts," "Would That Be Enough" and "Man Enough to Say It" all pull from the same well of plainspoken grown-folks R&amp;B. Since then he has stayed in demand as a featured voice, turning up on records by J.Hall, David Jermaine and Goody G.</p>
+
+      <p>He performs regularly across Louisiana and the Gulf South, backed by a live band as often as by tracks, and has built an audience of more than fifteen thousand who follow the music and the man behind it in roughly equal measure.</p>
+
+      <div class="short-bio">
+        <p class="eyebrow">Short bio — for listings and programs</p>
+        <p>Jacarri Jackson is an R&amp;B and soul artist from Shreveport, Louisiana. A former Division I wide receiver turned songwriter, he has released two albums — <em>The Perfect 7</em> (2019) and <em>Contagious Vibes</em> (2020) — and appears as a featured vocalist across the Gulf South scene.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TAGLINE ============ -->
+<section class="tagline">
+  <div class="wrap">
+    <div class="swash-holder reveal">
+      <svg viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path filter="url(#brush)" fill="#EFE7DD"
+          d="M10 44 C 160 14, 300 36, 460 24 S 720 12, 880 30 C 950 40, 985 20, 992 46
+             L 990 198 C 840 226, 690 202, 520 212 S 240 224, 96 204
+             C 46 196, 20 216, 8 190 Z"/>
+      </svg>
+      <p>Stay different.<br><span>Normal is crowded.</span></p>
+    </div>
+    <cite>— Jacarri Jackson</cite>
+  </div>
+</section>
+
+<!-- ============ MUSIC ============ -->
+<section class="band paper" id="music">
+  <div class="wrap reveal">
+    <p class="eyebrow">Discography</p>
+    <h2 class="section-head">Releases</h2>
+
+    <div class="release">
+      <span class="yr">2020</span>
+      <div>
+        <h3>Contagious Vibes</h3>
+        <span class="kind">Album · 10 tracks · Hate My Guts, Only One, Hold Me Close</span>
+      </div>
+      <a class="go" href="https://music.apple.com/us/album/contagious-vibes/1501089254" target="_blank" rel="noopener">Listen ↗</a>
+    </div>
+
+    <div class="release">
+      <span class="yr">2019</span>
+      <div>
+        <h3>The Perfect 7</h3>
+        <span class="kind">Album · 8 tracks · 28 min · Miss Cold-Hearted, In the Rain, Work for It</span>
+      </div>
+      <a class="go" href="https://music.apple.com/us/album/the-perfect-7/1454002023" target="_blank" rel="noopener">Listen ↗</a>
+    </div>
+
+    <div class="release">
+      <span class="yr">2018</span>
+      <div>
+        <h3>In the Rain</h3>
+        <span class="kind">Single · Debut release</span>
+      </div>
+      <a class="go" href="https://music.apple.com/us/album/in-the-rain-single/1446121092" target="_blank" rel="noopener">Listen ↗</a>
+    </div>
+
+    <p class="eyebrow" style="margin-top:4rem">Featured appearances</p>
+    <ul class="features">
+      <li><span class="track">For Ah Little Bit</span><span class="who">David Jermaine · 2023</span></li>
+      <li><span class="track">Closed Mouths</span><span class="who">Goody G Presents Pressure Pack, Vol. 1 · 2022</span></li>
+      <li><span class="track">Talk About It</span><span class="who">J.Hall · 2021</span></li>
+      <li><span class="track">They Say</span><span class="who">Issues — EP · 2020</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="band paper" id="video" style="padding-top:0">
+  <div class="wrap reveal">
+    <p class="eyebrow">Visuals</p>
+    <h2 class="section-head">Official video</h2>
+    <div class="videos">
+
+      <!-- Replace the thumbnail src with a still, or drop in an <iframe> embed. -->
+      <a class="video-card" href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener">
+        <div class="frame"><img src="assets/video-happy-ending.jpg" alt="" onerror="this.remove()"></div>
+        <h3>Happy Ending</h3>
+        <span class="kind">Official video · 4:18</span>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener">
+        <div class="frame"><img src="assets/video-work-for-it.jpg" alt="" onerror="this.remove()"></div>
+        <h3>Work For It</h3>
+        <span class="kind">Official video · 4:51</span>
+      </a>
+
+      <a class="video-card" href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener">
+        <div class="frame"><img src="assets/video-live.jpg" alt="" onerror="this.remove()"></div>
+        <h3>Live performance</h3>
+        <span class="kind">Full channel on YouTube</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTOS ============ -->
+<section class="band paper" id="photos" style="padding-top:0">
+  <div class="wrap reveal">
+    <p class="eyebrow">Press photos</p>
+    <h2 class="section-head">Approved imagery</h2>
+    <p class="lede" style="margin-bottom:2.5rem">High-resolution files are cleared for editorial and promotional use. Photo credit required where listed.</p>
+
+    <div class="gallery">
+      <div class="shot" data-slot="Press photo 01 — vertical portrait"><img src="assets/press-01.jpg" alt="Jacarri Jackson press photo" onerror="this.remove()"></div>
+      <div class="shot" data-slot="Press photo 02 — live on stage"><img src="assets/press-02.jpg" alt="Jacarri Jackson performing live" onerror="this.remove()"></div>
+      <div class="shot" data-slot="Press photo 03 — editorial"><img src="assets/press-03.jpg" alt="Jacarri Jackson editorial portrait" onerror="this.remove()"></div>
+    </div>
+
+    <div class="dl-row">
+      <a class="btn" href="assets/jacarri-jackson-press-photos.zip" download>Download photo pack</a>
+      <a class="btn" href="assets/jacarri-jackson-epk.pdf" download>Download one-sheet (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AT A GLANCE ============ -->
+<section class="band" id="glance">
+  <div class="wrap reveal">
+    <p class="eyebrow">Fast facts</p>
+    <h2 class="section-head">At a glance</h2>
+
+    <dl class="glance">
+      <div><dt>From</dt><dd>Shreveport, LA<small>Based in northwest Louisiana</small></dd></div>
+      <div><dt>Genre</dt><dd>R&amp;B / Soul<small>With southern hip-hop phrasing</small></dd></div>
+      <div><dt>Catalogue</dt><dd>2 albums<small>Plus a debut single and four featured appearances</small></dd></div>
+      <div><dt>Following</dt><dd>15.6K<small>Instagram, @iamjacarrijackson</small></dd></div>
+      <div><dt>For fans of</dt><dd>Boosie · J.Hall<small>Grown, melodic, Gulf South R&amp;B</small></dd></div>
+      <div><dt>Available for</dt><dd>Live &amp; features<small>Festivals, clubs, private events, guest verses and topline work</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ PLATFORMS ============ -->
+<section class="band" style="padding-top:0">
+  <div class="wrap reveal">
+    <p class="eyebrow">Listen &amp; follow</p>
+    <h2 class="section-head">Everywhere else</h2>
+
+    <ul class="platforms">
+      <li><a href="https://music.apple.com/us/artist/jacarri-jackson/1445983125" target="_blank" rel="noopener"><span class="name">Apple Music</span><span class="handle">Full catalogue</span></a></li>
+      <li><a href="https://open.spotify.com/album/3K3apBtnJlpozkQedl9lp3" target="_blank" rel="noopener"><span class="name">Spotify</span><span class="handle">The Perfect 7</span></a></li>
+      <li><a href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener"><span class="name">YouTube</span><span class="handle">@jacarrijackson9178</span></a></li>
+      <li><a href="https://www.instagram.com/iamjacarrijackson/" target="_blank" rel="noopener"><span class="name">Instagram</span><span class="handle">@iamjacarrijackson</span></a></li>
+      <li><a href="https://www.tiktok.com/@jacarrijackson" target="_blank" rel="noopener"><span class="name">TikTok</span><span class="handle">@jacarrijackson</span></a></li>
+      <li><a href="https://www.threads.com/@iamjacarrijackson" target="_blank" rel="noopener"><span class="name">Threads</span><span class="handle">@iamjacarrijackson</span></a></li>
+      <li><a href="https://www.facebook.com/jacarri.jackson/" target="_blank" rel="noopener"><span class="name">Facebook</span><span class="handle">Jackson Ja'Carri</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="band booking" id="booking">
+  <div class="wrap reveal">
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-head">Booking &amp; press</h2>
+    <p class="lede">For dates, features, interviews and asset requests.</p>
+
+    <div class="contact-grid">
+      <!-- Replace the three values below with real contact details. -->
+      <div>
+        <h3>Booking</h3>
+        <a href="mailto:booking@jacarrijackson.com">booking@jacarrijackson.com</a>
+        <p>Live dates, festivals, private events</p>
+      </div>
+      <div>
+        <h3>Press &amp; features</h3>
+        <a href="mailto:press@jacarrijackson.com">press@jacarrijackson.com</a>
+        <p>Interviews, premieres, guest verses</p>
+      </div>
+      <div>
+        <h3>Direct</h3>
+        <a href="https://www.instagram.com/iamjacarrijackson/" target="_blank" rel="noopener">@iamjacarrijackson</a>
+        <p>Instagram DM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Jacarri Jackson · All rights reserved</span>
+    <span>Press kit by <a href="#">Pressmark Studio</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const items = document.querySelectorAll('.reveal');
+
+if (reduced || !('IntersectionObserver' in window)) {
+  items.forEach(el => el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -12% 0px' });
+  items.forEach(el => io.observe(el));
+}
+</script>
+
+</body>
+</html>
