@@ -48,7 +48,14 @@ html{ scroll-behavior: smooth; }
 
 body{
   margin: 0;
-  background: var(--night);
+  background-color: var(--night);
+  /* subtle film / hair texture: tiny grain + faint hair lines */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.02) 1px, rgba(255,255,255,0) 2px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, rgba(255,255,255,0) 1px),
+    linear-gradient(180deg, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0) 1px);
+  background-size: 3px 3px, 100% 2px, 100% 60px;
+  background-blend-mode: overlay, overlay, multiply;
   color: var(--bone);
   font-family: var(--body);
   font-size: 1.0625rem;
@@ -442,6 +449,14 @@ a{ color: inherit; }
   color: var(--bone);
   text-shadow: 0 2px 18px rgba(0,0,0,0.6);
 }
+.video-card .frame::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 55%, rgba(27,18,20,.45));
+}
+.video-card .frame::after{ z-index: 2; }
 .video-card h3{
   margin: 0.9rem 0 0;
   font-family: var(--display);
@@ -491,6 +506,26 @@ a{ color: inherit; }
   color: color-mix(in srgb, var(--night) 45%, transparent);
 }
 .shot.wide{ aspect-ratio: 3 / 2; }
+.shot[href]::before{
+  content: "Download ↧";
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 2;
+  padding: 0.45rem 0.65rem;
+  background: color-mix(in srgb, var(--night) 88%, transparent);
+  color: var(--bone);
+  font-family: var(--util);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(0.25rem);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.shot[href]:hover::before,
+.shot[href]:focus-visible::before{ opacity: 1; transform: none; }
 
 .dl-row{
   margin-top: 1.75rem;
@@ -802,21 +837,20 @@ a{ color: inherit; }
     <h2 class="section-head">Official video</h2>
     <div class="videos">
 
-      <!-- Replace the thumbnail src with a still, or drop in an <iframe> embed. -->
-      <a class="video-card" href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener">
-        <div class="frame"><img src="assets/video-happy-ending.jpg" alt="" onerror="this.remove()"></div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=CPI2Zi1Fzcg" target="_blank" rel="noopener" data-video-id="CPI2Zi1Fzcg">
+        <div class="frame"><img src="https://i.ytimg.com/vi/CPI2Zi1Fzcg/hqdefault.jpg" alt="Play Happy Ending by Jacarri Jackson" loading="lazy"></div>
         <h3>Happy Ending</h3>
         <span class="kind">Official video · 4:18</span>
       </a>
 
-      <a class="video-card" href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener">
-        <div class="frame"><img src="assets/video-work-for-it.jpg" alt="" onerror="this.remove()"></div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=j_yP_pDbjNo" target="_blank" rel="noopener" data-video-id="j_yP_pDbjNo">
+        <div class="frame"><img src="https://i.ytimg.com/vi/j_yP_pDbjNo/hqdefault.jpg" alt="Play Work For It by Jacarri Jackson" loading="lazy"></div>
         <h3>Work For It</h3>
         <span class="kind">Official video · 4:51</span>
       </a>
 
-      <a class="video-card" href="https://www.youtube.com/@jacarrijackson9178" target="_blank" rel="noopener">
-        <div class="frame"><img src="assets/video-live.jpg" alt="" onerror="this.remove()"></div>
+      <a class="video-card" href="https://www.youtube.com/watch?v=xdjeFWpuxro" target="_blank" rel="noopener" data-video-id="xdjeFWpuxro">
+        <div class="frame"><img src="https://i.ytimg.com/vi/xdjeFWpuxro/hqdefault.jpg" alt="Play Jacarri Jackson live performance" loading="lazy"></div>
         <h3>Live performance</h3>
         <span class="kind">Full channel on YouTube</span>
       </a>
@@ -830,12 +864,12 @@ a{ color: inherit; }
   <div class="wrap reveal">
     <p class="eyebrow">Press photos</p>
     <h2 class="section-head">Approved imagery</h2>
-    <p class="lede" style="margin-bottom:2.5rem">High-resolution files are cleared for editorial and promotional use. Photo credit required where listed.</p>
+    <p class="lede" style="margin-bottom:2.5rem">High-resolution files are cleared for editorial and promotional use. Download a single image below or get the complete photo pack.</p>
 
     <div class="gallery">
-      <div class="shot" data-slot="Press photo 01 — vertical portrait"><img src="assets/press-01.jpg" alt="Jacarri Jackson press photo" onerror="this.remove()"></div>
-      <div class="shot" data-slot="Press photo 02 — live on stage"><img src="assets/press-02.jpg" alt="Jacarri Jackson performing live" onerror="this.remove()"></div>
-      <div class="shot" data-slot="Press photo 03 — editorial"><img src="assets/press-03.jpg" alt="Jacarri Jackson editorial portrait" onerror="this.remove()"></div>
+      <a class="shot" href="assets/press-01.jpg" download="Jacarri-Jackson-Press-Photo-01.jpg" aria-label="Download Jacarri Jackson press photo 1"><img src="assets/press-01.jpg" alt="Jacarri Jackson standing outdoors in a white T-shirt and cap" loading="lazy"></a>
+      <a class="shot" href="assets/press-02.jpg" download="Jacarri-Jackson-Press-Photo-02.jpg" aria-label="Download Jacarri Jackson press photo 2"><img src="assets/press-02.jpg" alt="Jacarri Jackson smiling in sunglasses and making a heart with his hands" loading="lazy"></a>
+      <a class="shot" href="assets/press-03.jpg" download="Jacarri-Jackson-Press-Photo-03.jpg" aria-label="Download Jacarri Jackson press photo 3"><img src="assets/press-03.jpg" alt="Full-length portrait of Jacarri Jackson standing on outdoor steps" loading="lazy"></a>
     </div>
 
     <div class="dl-row">
@@ -914,8 +948,26 @@ a{ color: inherit; }
     <span>Press kit by <a href="#">Pressmark Studio</a></span>
   </div>
 </footer>
+<!-- Video modal (in-page player; anchors remain external fallback) -->
+<style>
+/* modal player styles */
+#video-modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(11,8,9,0.88); z-index:2000; padding:2rem; }
+#video-modal.open{ display:flex; }
+#video-modal .player{ width:min(1000px, 96vw); aspect-ratio:16/9; background:#000; position:relative; border-radius:6px; box-shadow:0 24px 80px rgba(0,0,0,.5); }
+#video-modal .close{ position:absolute; z-index:2; right:-.75rem; top:-.75rem; width:2.5rem; height:2.5rem; border-radius:50%; background:var(--gold); color:var(--night); border:0; font-size:1rem; font-weight:700; cursor:pointer; }
+#video-modal iframe{ display:block; border-radius:6px; }
+@media (max-width:720px){ #video-modal .player{ width:100%; aspect-ratio:16/9; } }
+</style>
+
+<div id="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="YouTube video player">
+  <div class="player" id="video-player-wrap">
+    <button class="close" id="video-modal-close" aria-label="Close video">✕</button>
+    <!-- iframe injected here -->
+  </div>
+</div>
 
 <script>
+// page scripts + video modal
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -934,6 +986,57 @@ if (reduced || !('IntersectionObserver' in window)) {
   }, { rootMargin: '0px 0px -12% 0px' });
   items.forEach(el => io.observe(el));
 }
+
+(function(){
+  const modal = document.getElementById('video-modal');
+  const wrap = document.getElementById('video-player-wrap');
+  const closeBtn = document.getElementById('video-modal-close');
+  let opener = null;
+
+  function openPlayer(videoId){
+    if(!videoId) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0';
+    iframe.title = 'Jacarri Jackson YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.setAttribute('allowfullscreen','');
+    iframe.style.width='100%';
+    iframe.style.height='100%';
+    iframe.style.border='0';
+    wrap.appendChild(iframe);
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+    document.addEventListener('keydown', onKey);
+  }
+
+  function closePlayer(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    const ifr = wrap.querySelector('iframe');
+    if(ifr) wrap.removeChild(ifr);
+    document.removeEventListener('keydown', onKey);
+    if(opener) opener.focus();
+  }
+
+  function onKey(e){ if(e.key === 'Escape') closePlayer(); }
+
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('.video-card');
+    if(!a) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    opener = a;
+    const vid = a.getAttribute('data-video-id') || (new URL(a.href)).searchParams.get('v');
+    if(vid) openPlayer(vid);
+  });
+
+  modal.addEventListener('click', function(e){
+    if(e.target === modal || e.target === closeBtn) closePlayer();
+  });
+})();
 </script>
 
 </body>
