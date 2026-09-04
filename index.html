@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jacarri Jackson — Electronic Press Kit</title>
-<meta name="description" content="Official press kit for Jacarri Jackson, R&amp;B, soul and southern hip-hop artist from Shreveport, Louisiana. Bio, discography, video, press photos and booking.">
+<meta name="description" content="Official press kit for Jacarri Jackson, featuring the new Lothario EP, artist bio, music, video, press photos and booking.">
 
 <!-- Social preview. Swap the image path once press photos are in /assets. -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Jacarri Jackson — Electronic Press Kit">
-<meta property="og:description" content="R&amp;B, soul and southern hip-hop out of Shreveport, Louisiana.">
-<meta property="og:image" content="assets/press-01.jpg">
+<meta property="og:description" content="Discover Lothario, the new EP from Shreveport R&amp;B and soul artist Jacarri Jackson.">
+<meta property="og:image" content="assets/lothario-cover.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,6 @@
   --bone:   #EFE7DD;   /* the paint swash / paper              */
   --gold:   #C9A14C;   /* the "7"                              */
   --lilac:  #9C86BC;   /* Contagious Vibes                     */
-  --accent-red: #D62828; /* action red for play/listen icons */
 
   --display: "Big Shoulders Display", "Haettenschweiler", sans-serif;
   --body:    "Newsreader", Georgia, serif;
@@ -134,17 +133,8 @@ a{ color: inherit; }
   text-decoration: none;
   margin-right: auto;
   white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
 }
-.mark .dot{ color: var(--gold); }
-.mark img{
-  width: 2.5rem;
-  height: 2.5rem;
-  object-fit: contain;
-  flex: 0 0 auto;
-}
+.mark span{ color: var(--gold); }
 
 .topnav{
   display: flex;
@@ -179,10 +169,6 @@ a{ color: inherit; }
 
 @media (max-width: 780px){
   .topnav{ display: none; }
-  .topbar .wrap{ gap: 0.75rem; }
-  .mark{ gap: 0.45rem; font-size: 1rem; letter-spacing: 0.05em; }
-  .mark img{ width: 2rem; height: 2rem; }
-  .book-link{ padding-inline: 0.75rem; }
 }
 
 /* ---------- hero ---------- */
@@ -269,6 +255,119 @@ a{ color: inherit; }
 .btn:hover{ background: var(--gold); color: var(--night); }
 .btn.solid{ background: var(--gold); color: var(--night); }
 .btn.solid:hover{ background: var(--bone); border-color: var(--bone); }
+
+/* ---------- new release spotlight ---------- */
+
+.spotlight{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(4.5rem, 11vw, 8rem);
+  background:
+    linear-gradient(115deg, color-mix(in srgb, var(--plum) 94%, black), var(--night) 64%),
+    var(--night);
+  border-block: 1px solid color-mix(in srgb, var(--gold) 42%, transparent);
+}
+.spotlight::before{
+  content: "LOTHARIO";
+  position: absolute;
+  z-index: -1;
+  right: -0.04em;
+  top: 50%;
+  transform: translateY(-52%);
+  font-family: var(--display);
+  font-size: clamp(8rem, 26vw, 24rem);
+  font-weight: 900;
+  line-height: .7;
+  letter-spacing: -.045em;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--rose) 15%, transparent);
+  opacity: .65;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.spotlight-grid{
+  display: grid;
+  grid-template-columns: minmax(16rem, .8fr) minmax(19rem, 1.2fr);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 7rem);
+  perspective: 1200px;
+}
+.release-art{
+  position: relative;
+  aspect-ratio: 1;
+  isolation: isolate;
+  transform: rotate(-3.5deg) rotateY(5deg);
+  transform-style: preserve-3d;
+  transition: transform .55s cubic-bezier(.2,.8,.2,1);
+}
+.release-art::before,
+.release-art::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("assets/lothario-cover.jpg") center / cover no-repeat;
+  border: 1px solid color-mix(in srgb, var(--gold) 38%, transparent);
+  box-shadow: 0 1.4rem 3.2rem rgba(0,0,0,.34);
+}
+.release-art::before{
+  transform: translate3d(-1.1rem, .9rem, -44px) rotate(-4deg);
+  filter: brightness(.42) saturate(.7);
+  opacity: .72;
+}
+.release-art::after{
+  transform: translate3d(1.1rem, 1.35rem, -22px) rotate(4deg);
+  filter: brightness(.64) sepia(.12);
+  opacity: .82;
+}
+.release-art img{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid color-mix(in srgb, var(--gold) 52%, transparent);
+  box-shadow: 0 2.25rem 5rem rgba(0,0,0,.5), 0 .3rem 1rem rgba(0,0,0,.32);
+}
+.release-art:hover{
+  transform: rotate(-1.5deg) rotateY(1deg) translateY(-.35rem);
+}
+.release-copy .eyebrow{ color: var(--gold); margin-bottom: 1rem; }
+.release-copy h2{
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(4.6rem, 11vw, 9rem);
+  font-weight: 900;
+  line-height: .78;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.release-copy .release-type{
+  display: block;
+  margin-top: 1.4rem;
+  font-family: var(--util);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+.release-copy .lede{ margin: 1.5rem 0 0; max-width: 34rem; }
+.release-links{ display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.release-links .btn{ display: inline-flex; align-items: center; gap: .55rem; }
+.release-links .btn span{ font-size: 1rem; line-height: 1; }
+@media (max-width: 740px){
+  .spotlight-grid{ grid-template-columns: 1fr; }
+  .release-art{
+    width: min(calc(100% - 1.5rem), 26rem);
+    margin-left: .45rem;
+    transform: rotate(-2.5deg);
+  }
+  .release-art::before{ transform: translate(-.55rem, .6rem) rotate(-3deg); }
+  .release-art::after{ transform: translate(.7rem, .85rem) rotate(3deg); }
+  .release-copy h2{ font-size: clamp(4.3rem, 22vw, 7rem); }
+}
 
 /* ---------- bio ---------- */
 
@@ -550,19 +649,6 @@ a{ color: inherit; }
 .paper .btn{ border-color: var(--night); color: var(--night); }
 .paper .btn:hover{ background: var(--night); color: var(--bone); }
 
-@media (max-width: 780px){
-  /* mobile-only: make action icons red without changing button text */
-  .video-card .frame::after{ color: var(--accent-red); }
-  .release .go .icon{ color: var(--accent-red); }
-  .hero-actions .btn.solid[href*="music.apple.com"]::before{
-    content: "♪";
-    margin-right: 0.6rem;
-    color: var(--accent-red);
-    font-size: 1.1rem;
-    line-height: 1;
-  }
-}
-
 /* ---------- at a glance ---------- */
 
 .glance{
@@ -726,11 +812,9 @@ a{ color: inherit; }
 <!-- ============ NAV ============ -->
 <header class="topbar">
   <div class="wrap">
-    <a class="mark" href="#top">
-      <img src="assets/jacarri-jackson-logo.svg" alt="" width="40" height="40" aria-hidden="true">
-      <span class="mark-text">Jacarri Jackson <span class="dot">·</span> EPK</span>
-    </a>
+    <a class="mark" href="#top">Jacarri Jackson <span>·</span> EPK</a>
     <nav class="topnav" aria-label="Sections">
+      <a href="#lothario">New EP</a>
       <a href="#bio">Bio</a>
       <a href="#music">Music</a>
       <a href="#video">Video</a>
@@ -769,8 +853,29 @@ a{ color: inherit; }
     </p>
 
     <div class="hero-actions">
-      <a class="btn solid" href="https://music.apple.com/us/artist/jacarri-jackson/1445983125" target="_blank" rel="noopener">Listen on Apple Music</a>
+      <a class="btn solid" href="#lothario">Hear the new EP</a>
       <a class="btn" href="#booking">Book Jacarri</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEW RELEASE ============ -->
+<section class="spotlight" id="lothario" aria-labelledby="lothario-title">
+  <div class="wrap spotlight-grid reveal">
+    <div class="release-art">
+      <img src="assets/lothario-cover.jpg" alt="Lothario EP cover artwork featuring Jacarri Jackson seated in bed" width="1254" height="1254">
+    </div>
+
+    <div class="release-copy">
+      <p class="eyebrow">New release · Out now</p>
+      <h2 id="lothario-title">Lothario</h2>
+      <span class="release-type">The new EP by Jacarri Jackson</span>
+      <p class="lede">A new chapter from Jacarri Jackson is here. Stream <em>Lothario</em> now, explore the full catalogue, and follow the story behind the release.</p>
+      <div class="release-links" aria-label="Lothario and artist links">
+        <a class="btn solid" href="https://music.apple.com/us/album/lothario/6807994265" target="_blank" rel="noopener"><span aria-hidden="true">&#9654;</span> Listen on Apple Music</a>
+        <a class="btn" href="https://music.apple.com/us/artist/jacarri-jackson/1445983125" target="_blank" rel="noopener">Full catalogue ↗</a>
+        <a class="btn" href="https://www.instagram.com/iamjacarrijackson/" target="_blank" rel="noopener">Follow the release ↗</a>
+      </div>
     </div>
   </div>
 </section>
@@ -789,13 +894,13 @@ a{ color: inherit; }
 
       <p>His debut single "In the Rain" landed in 2018, followed by the full-length <em>The Perfect 7</em> in 2019 — eight tracks that set the template: warm, unhurried production, honest writing about wanting and being wanted, and a voice that slides between singing and speaking without ever announcing the switch. "Miss Cold-Hearted" and "In the Rain" remain his most-played songs.</p>
 
-      <p><em>Contagious Vibes</em> followed in 2020, a longer and looser record that widened the range — "Hate My Guts," "Would That Be Enough" and "Man Enough to Say It" all pull from the same well of plainspoken grown-folks R&amp;B. Since then he has stayed in demand as a featured voice, turning up on records by J.Hall, David Jermaine and Goody G.</p>
+      <p><em>Contagious Vibes</em> followed in 2020, a longer and looser record that widened the range — "Hate My Guts," "Would That Be Enough" and "Man Enough to Say It" all pull from the same well of plainspoken grown-folks R&amp;B. His new EP, <em>Lothario</em>, opens the latest chapter in that story. He has also stayed in demand as a featured voice, turning up on records by J.Hall, David Jermaine and Goody G.</p>
 
       <p>He performs regularly across Louisiana and the Gulf South, backed by a live band as often as by tracks, and has built an audience of more than fifteen thousand who follow the music and the man behind it in roughly equal measure.</p>
 
       <div class="short-bio">
         <p class="eyebrow">Short bio — for listings and programs</p>
-        <p>Jacarri Jackson is an R&amp;B and soul artist from Shreveport, Louisiana. A former Division I wide receiver turned songwriter, he has released two albums — <em>The Perfect 7</em> (2019) and <em>Contagious Vibes</em> (2020) — and appears as a featured vocalist across the Gulf South scene.</p>
+        <p>Jacarri Jackson is an R&amp;B and soul artist from Shreveport, Louisiana. A former Division I wide receiver turned songwriter, his catalogue includes <em>The Perfect 7</em> (2019), <em>Contagious Vibes</em> (2020), and the new EP <em>Lothario</em>. He also appears as a featured vocalist across the Gulf South scene.</p>
       </div>
     </div>
   </div>
@@ -824,12 +929,21 @@ a{ color: inherit; }
     <h2 class="section-head">Releases</h2>
 
     <div class="release">
+      <span class="yr">NEW</span>
+      <div>
+        <h3>Lothario</h3>
+        <span class="kind">EP · New release</span>
+      </div>
+      <a class="go" href="https://music.apple.com/us/album/lothario/6807994265" target="_blank" rel="noopener">Listen ↗</a>
+    </div>
+
+    <div class="release">
       <span class="yr">2020</span>
       <div>
         <h3>Contagious Vibes</h3>
         <span class="kind">Album · 10 tracks · Hate My Guts, Only One, Hold Me Close</span>
       </div>
-      <a class="go" href="https://music.apple.com/us/album/contagious-vibes/1501089254" target="_blank" rel="noopener">Listen <span class="icon" aria-hidden="true">↗</span></a>
+      <a class="go" href="https://music.apple.com/us/album/contagious-vibes/1501089254" target="_blank" rel="noopener">Listen ↗</a>
     </div>
 
     <div class="release">
@@ -838,7 +952,7 @@ a{ color: inherit; }
         <h3>The Perfect 7</h3>
         <span class="kind">Album · 8 tracks · 28 min · Miss Cold-Hearted, In the Rain, Work for It</span>
       </div>
-      <a class="go" href="https://music.apple.com/us/album/the-perfect-7/1454002023" target="_blank" rel="noopener">Listen <span class="icon" aria-hidden="true">↗</span></a>
+      <a class="go" href="https://music.apple.com/us/album/the-perfect-7/1454002023" target="_blank" rel="noopener">Listen ↗</a>
     </div>
 
     <div class="release">
@@ -847,7 +961,7 @@ a{ color: inherit; }
         <h3>In the Rain</h3>
         <span class="kind">Single · Debut release</span>
       </div>
-      <a class="go" href="https://music.apple.com/us/album/in-the-rain-single/1446121092" target="_blank" rel="noopener">Listen <span class="icon" aria-hidden="true">↗</span></a>
+      <a class="go" href="https://music.apple.com/us/album/in-the-rain-single/1446121092" target="_blank" rel="noopener">Listen ↗</a>
     </div>
 
     <p class="eyebrow" style="margin-top:4rem">Featured appearances</p>
@@ -918,7 +1032,7 @@ a{ color: inherit; }
     <dl class="glance">
       <div><dt>From</dt><dd>Shreveport, LA<small>Based in northwest Louisiana</small></dd></div>
       <div><dt>Genre</dt><dd>R&amp;B / Soul<small>With southern hip-hop phrasing</small></dd></div>
-      <div><dt>Catalogue</dt><dd>2 albums<small>Plus a debut single and four featured appearances</small></dd></div>
+      <div><dt>Catalogue</dt><dd>2 albums + EP<small>Including the new release <em>Lothario</em></small></dd></div>
       <div><dt>Following</dt><dd>15.6K<small>Instagram, @iamjacarrijackson</small></dd></div>
       <div><dt>For fans of</dt><dd>Boosie · J.Hall<small>Grown, melodic, Gulf South R&amp;B</small></dd></div>
       <div><dt>Available for</dt><dd>Live &amp; features<small>Festivals, clubs, private events, guest verses and topline work</small></dd></div>
